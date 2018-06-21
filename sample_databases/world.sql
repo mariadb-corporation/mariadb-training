@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.9, for osx10.10 (x86_64)
 --
--- Host: localhost    Database: world_x
+-- Host: localhost    Database: world
 -- ------------------------------------------------------
 -- Server version       5.7.9-debug-log
 
@@ -15,9 +15,9 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-DROP SCHEMA IF EXISTS world_x;
-CREATE SCHEMA world_x;
-USE world_x;
+DROP SCHEMA IF EXISTS world;
+CREATE SCHEMA world;
+USE world;
 
 --
 -- Table structure for table `city`
