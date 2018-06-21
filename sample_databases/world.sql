@@ -4398,7 +4398,7 @@ DROP TABLE IF EXISTS `countryinfo`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `countryinfo` (
   `doc` json DEFAULT NULL,
-  `_id` VARCHAR(32) GENERATED ALWAYS AS (json_unquote(json_extract(doc, '$._id'))) STORED PRIMARY KEY
+  `_id` varchar(32) GENERATED ALWAYS AS (json_value(`doc`,'$._id')) STORED
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
