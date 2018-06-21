@@ -4663,7 +4663,7 @@ CREATE TABLE `countrylanguage` (
   `Language` CHAR(30) NOT NULL DEFAULT '',
   `IsOfficial` enum('T','F') NOT NULL DEFAULT 'F',
   `Percentage` FLOAT(4,1) NOT NULL DEFAULT '0.0',
-  PRIMARY KEY (`CountryCode`,`Language`),
+  PRIMARY KEY (`CountryCode`,`Language`)
   -- KEY `CountryCode` (`CountryCode`),
   -- CONSTRAINT `countrylanguage_ibfk_1` FOREIGN KEY (`CountryCode`) REFERENCES `country` (`Code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
