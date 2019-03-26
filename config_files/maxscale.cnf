@@ -5,7 +5,7 @@ logdir=/var/log/maxscale/
 [MariaDB-Monitor]
 type=monitor
 module=mariadbmon
-servers=server1,server2
+servers=server1,server2,server3
 user=<USERNAME>
 password=<PASSWORD>
 monitor_interval=2000
@@ -13,7 +13,7 @@ monitor_interval=2000
 [Read-Only-Service]
 type=service
 router=readconnroute
-servers=server1,server2
+servers=server1,server2,server3
 user=<USERNAME>
 password=<PASSWORD>
 router_options=slave
@@ -21,7 +21,7 @@ router_options=slave
 [Read-Write-Service]
 type=service
 router=readwritesplit
-servers=server1,server2
+servers=server1,server2,server3
 user=<USERNAME>
 password=<PASSWORD>
 
