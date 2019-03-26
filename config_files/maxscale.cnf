@@ -66,3 +66,9 @@ type=server
 address=<SERVER2-IP-ADDRESS>
 port=3306
 protocol=MariaDBBackend
+
+[server3]
+type=server
+address=<SERVER3-IP-ADDRESS>
+port=3306
+protocol=MariaDBBackend
