@@ -28,6 +28,12 @@ protocol=MariaDBBackend
 #password=<PASSWORD>
 #monitor_interval=2000
 
+#[Read-Write-Listener]
+#type=listener
+#service=Read-Write-Service
+#protocol=MariaDBClient
+#port=4006
+
 #[Read-Only-Service]
 #type=service
 #router=readconnroute
