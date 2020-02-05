@@ -28,11 +28,23 @@ protocol=MariaDBBackend
 #password=<PASSWORD>
 #monitor_interval=2000
 
+#[Database-Firewall]
+#type=filter
+#module=dbfwfilter
+#action=block
+#rules=/etc/maxscale.modules.d/firewall.txt
+
 #[Read-Write-Listener]
 #type=listener
 #service=Read-Write-Service
 #protocol=MariaDBClient
 #port=4006
+
+#[Database-Firewall-Listener]
+#type=listener
+#service=Database-Firewall-Service
+#protocol=MariaDBClient
+#port=4004
 
 #[Read-Write-Service]
 #type=service
@@ -48,3 +60,11 @@ protocol=MariaDBBackend
 #delayed_retry               = true
 #master_reconnection         = true
 #master_failure_mode         = fail_on_write
+	
+#[Database-Firewall-Service]
+#type=service
+#router=readconnroute
+#servers=server1
+#user=<USERNAME>
+#password=<PASSWORD>
+#filters=Database-Firewall
