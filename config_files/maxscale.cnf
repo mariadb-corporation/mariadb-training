@@ -27,6 +27,17 @@ protocol=MariaDBBackend
 #user=<USERNAME>
 #password=<PASSWORD>
 #monitor_interval=2000
+#replication_user=repuser
+#replication_password=<ENCRYPTED PASSWORD HASH FROM LESSON 7-1>
+#backend_connect_timeout=2
+#backend_write_timeout=2
+#backend_read_timeout=2
+#backend_connect_attempts=1
+#detect_standalone_master=true
+#auto_failover=1
+#auto_rejoin=1
+#failcount=2 switchover_timeout=20
+#failover_timeout=20
 
 #[Database-Firewall]
 #type=filter
