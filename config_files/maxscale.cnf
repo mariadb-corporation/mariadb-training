@@ -45,6 +45,16 @@ protocol=MariaDBBackend
 #action=block
 #rules=/etc/maxscale.modules.d/firewall.txt
 
+#[Cache-Filter]
+#type=filter
+#module=cache
+#soft_ttl=3600
+#hard_ttl=7200
+#max_size=20M
+#selects=assume_cacheable
+#rules=/var/lib/maxscale/cache_rules.json
+#debug=31
+
 #[Read-Write-Listener]
 #type=listener
 #service=Read-Write-Service
@@ -58,11 +68,11 @@ protocol=MariaDBBackend
 #port=4004
 
 #[Read-Write-Service]
-#type=service
-#router=readwritesplit
-#servers=server1,server2,server3
-#user=<USERNAME>
-#password=<PASSWORD>
+#type                        = service
+#router                      = readwritesplit
+#servers                     = server1,server2,server3
+#user                        = <USERNAME>
+#password                    = <PASSWORD>
 #max_sescmd_history          = 1500
 #causal_reads                = 1
 #causal_reads_timeout        = 10s
@@ -71,6 +81,7 @@ protocol=MariaDBBackend
 #delayed_retry               = 1
 #master_reconnection         = 1
 #master_failure_mode         = fail_on_write
+#filters                     = Cache-Filter
 	
 #[Database-Firewall-Service]
 #type=service
