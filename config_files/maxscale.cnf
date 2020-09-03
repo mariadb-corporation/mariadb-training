@@ -64,12 +64,12 @@ protocol=MariaDBBackend
 #user=<USERNAME>
 #password=<PASSWORD>
 #max_sescmd_history          = 1500
-#causal_reads                = true
-#causal_reads_timeout        = 10
-#transaction_replay          = true
+#causal_reads                = 1
+#causal_reads_timeout        = 10s
+#transaction_replay          = 1
 #transaction_replay_max_size = 1Mi
-#delayed_retry               = true
-#master_reconnection         = true
+#delayed_retry               = 1
+#master_reconnection         = 1
 #master_failure_mode         = fail_on_write
 	
 #[Database-Firewall-Service]
