@@ -39,7 +39,7 @@ protocol                     = MariaDBBackend
 #backend_write_timeout       = 2
 #backend_read_timeout        = 2
 #backend_connect_attempts    = 1
-#detect_standalone_master    = true
+#detect_standalone_master    = 1
 #auto_failover               = 1
 #auto_rejoin                 = 1
 #failcount                   = 2 
@@ -74,6 +74,11 @@ protocol                     = MariaDBBackend
 #max_qps                     = 2
 #throttling_duration         = 60000
 
+#[Rewrite-CTAS]
+#type = filter
+#module=luafilter
+#session_script=/var/lib/maxscale/rewrite_ctas.lua
+
 #[Read-Write-Listener]
 #type                        = listener
 #service                     = Read-Write-Service
@@ -100,7 +105,7 @@ protocol                     = MariaDBBackend
 #delayed_retry               = 1
 #master_reconnection         = 1
 #master_failure_mode         = fail_on_write
-#filters                     = Cache-Filter
+#filters                     = Rewrite-CTAS
 	
 #[Database-Firewall-Service]
 #type                        = service
