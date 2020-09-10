@@ -5,8 +5,9 @@ logdir                       = /var/log/maxscale/
 #admin_auth                  = 1
 #admin_host                  = 0.0.0.0
 #admin_gui                   = 1
-#admin_ssl_key               = /var/lib/maxscale/key.pem
-#admin_ssl_cert              = /var/lib/maxscale/cert.pem
+#admin_ssl_key               = /var/lib/maxscale/server-key.pem
+#admin_ssl_cert              = /var/lib/maxscale/server-cert.pem
+#admin_ssl_ca_cert           = /var/lib/maxscale/ca-cert.pem
 
 [server1]
 type                         = server
