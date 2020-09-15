@@ -78,9 +78,9 @@ protocol                     = MariaDBBackend
 #[Rewrite-CTAS]
 #type = filter
 #module=luafilter
-#session_script=/var/lib/maxscale/rewrite_ctas.lua
+#session_script              = /etc/maxscale.modules.d/rewrite_ctas.lua
 
-#[Read-Write-Listener]
+#[Read-Write-Listener]/
 #type                        = listener
 #service                     = Read-Write-Service
 #protocol                    = MariaDBClient
@@ -106,7 +106,6 @@ protocol                     = MariaDBBackend
 #delayed_retry               = 1
 #master_reconnection         = 1
 #master_failure_mode         = fail_on_write
-#filters                     = Rewrite-CTAS
 	
 #[Database-Firewall-Service]
 #type                        = service
