@@ -106,6 +106,7 @@ protocol                     = MariaDBBackend
 #delayed_retry               = 1
 #master_reconnection         = 1
 #master_failure_mode         = fail_on_write
+#filters                     = Cache-Filter
 	
 #[Database-Firewall-Service]
 #type                        = service
