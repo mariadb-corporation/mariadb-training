@@ -60,7 +60,7 @@ protocol                     = MariaDBBackend
 #hard_ttl                    = 7200
 #max_size                    = 20M
 #selects                     = assume_cacheable
-#rules                       = /var/lib/maxscale/cache_rules.json
+#rules                       = /etc/maxscale.modules.d/cache_rules.json
 #debug                       = 31
 
 #[SQL-Injection-Filter]
