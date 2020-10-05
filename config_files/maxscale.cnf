@@ -63,7 +63,7 @@ protocol                     = MariaDBBackend
 #rules                       = /etc/maxscale.modules.d/cache_rules.json
 #debug                       = 31
 
-#[SQL-Injection-Filter]
+#[SQL-Injection]
 #type                        = filter
 #module                      = dbfwfilter
 #action                      = block
