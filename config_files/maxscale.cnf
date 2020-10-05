@@ -80,7 +80,7 @@ protocol                     = MariaDBBackend
 #module=luafilter
 #session_script              = /etc/maxscale.modules.d/rewrite_ctas.lua
 
-#[Read-Write-Listener]/
+#[Read-Write-Listener]
 #type                        = listener
 #service                     = Read-Write-Service
 #protocol                    = MariaDBClient
