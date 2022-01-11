@@ -2,8 +2,8 @@
 #### PRIMARY SERVER CONFIGURATION
 #server_id            = 1
 #log_basename         = primary1
-#log-bin              = /var/log/mariadb/primary1-bin
-#log-bin-index        = /var/log/mariadb/primary1-bin.index
+#log-bin              = primary1-bin
+#log-bin-index        = primary1-bin.index
 #binlog_format        = ROW
 #expire_logs_days     = 10
 
@@ -11,8 +11,8 @@
 #read-only
 #server_id            = 2
 #log_basename         = replica1
-#log-bin              = /var/log/mariadb/replica1-bin
-#log-bin-index        = /var/log/mariadb/replica1-bin.index
+#log-bin              = replica1-bin
+#log-bin-index        = replica1-bin.index
 #binlog_format        = ROW
 #expire_logs_days     = 10
 
@@ -20,7 +20,7 @@
 #read-only
 #server_id            = 3
 #log_basename         = replica2
-#log-bin              = /var/log/mariadb/replica2-bin
-#log-bin-index        = /var/log/mariadb/replica2-bin.index
+#log-bin              = replica2-bin
+#log-bin-index        = replica2-bin.index
 #binlog_format        = ROW
 #expire_logs_days     = 10
