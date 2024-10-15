@@ -25,13 +25,13 @@ protocol                     = MariaDBBackend
 
 [server2]
 type                         = server
-address                      = <SERVER1-IP-ADDRESS>
+address                      = <SERVER2-IP-ADDRESS>
 port                         = 3306
 protocol                     = MariaDBBackend
 
 [server3]
 type                         = server
-address                      = <SERVER1-IP-ADDRESS>
+address                      = <SERVER3-IP-ADDRESS>
 port                         = 3306
 protocol                     = MariaDBBackend
 
