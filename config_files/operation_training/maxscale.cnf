@@ -1,0 +1,72 @@
+#######################################################################################################
+# This configuration is dedicated to be used for MariaDB Training session for Operation training
+#
+# revised on 2024-10-12
+#
+[maxscale]
+threads                      = auto
+logdir                       = /var/log/maxscale/
+#log_info                     = 1 
+#admin_enabled               = 1
+#admin_auth                  = 1
+#admin_host                  = 0.0.0.0
+#admin_port                  = 8989
+#admin_gui                   = 1
+#admin_secure_gui             = 1
+#admin_ssl_key               = /var/lib/maxscale/server-key.pem
+#admin_ssl_cert              = /var/lib/maxscale/server-cert.pem
+#admin_ssl_ca_cert           = /var/lib/maxscale/ca-cert.pem
+
+[server1]
+type                         = server
+address                      = <SERVER1-IP-ADDRESS>
+port                         = 3306
+protocol                     = MariaDBBackend
+
+[server2]
+type                         = server
+address                      = <SERVER1-IP-ADDRESS>
+port                         = 3306
+protocol                     = MariaDBBackend
+
+[server3]
+type                         = server
+address                      = <SERVER1-IP-ADDRESS>
+port                         = 3306
+protocol                     = MariaDBBackend
+
+[MariaDB-Monitor]
+type                         = monitor
+module                       = mariadbmon
+servers                      = server1,server2,server3
+user                         = maxscale_monitor
+password                     = aBcd123_
+monitor_interval             = 500ms
+replication_user             = replication_user
+replication_password         = aBcd123_
+#backend_connect_timeout     = 2
+#backend_write_timeout       = 2
+#backend_read_timeout        = 2
+#backend_connect_attempts    = 1
+#master_conditions           = connected_slave,running_slave
+auto_failover                = true
+auto_rejoin                  = true
+#failcount                   = 2 
+#switchover_timeout          = 20
+#failover_timeout            = 20 
+
+[Read-Write-Service]
+type                         = service
+router                       = readwritesplit
+servers                      = server1,server2,server3
+user                         = maxscale_user
+password                     = aBcd123_
+#transaction_replay           = true
+#transaction_replay_timeout   = 30s
+
+[Read-Write-Listener]
+type                         = listener
+service                      = Read-Write-Service
+protocol                     = mariadbprotocol
+port                         = 4006
+address                      = 0.0.0.0
